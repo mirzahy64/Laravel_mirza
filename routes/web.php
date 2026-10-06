@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home',[HomeController::class,'index']);
+
+Route::get('/pasar', function () {
+    return view('pasar');
+});
