@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terima Kasih , {{$nama}} <title>
+    <title>Terima Kasih</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
 <body>
 
     <div class="thankyou-container">
-        <h2>Terima Kasih, BUDI! 🎉</h2>
+        <h2>Terima Kasih, {{$nama}} 🎉</h2>
         <p class="lead">Pertanyaan Anda telah berhasil dikirim.</p>
 
         <blockquote>
