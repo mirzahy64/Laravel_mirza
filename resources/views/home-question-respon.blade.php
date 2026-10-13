@@ -52,20 +52,20 @@
 <body>
 
     <div class="thankyou-container">
-        <h2>Terima Kasih, {{$nama}} 🎉</h2>
+        <h2>Terima Kasih, {{ session('nama', 'Pengguna') }}! 🎉</h2>
         <p class="lead">Pertanyaan Anda telah berhasil dikirim.</p>
 
         <blockquote>
             <strong>Pertanyaan Anda:</strong><br>
-            "Siapakah Nama Orang Tua Budi?"
+            "{{ session('pertanyaan') }}"
         </blockquote>
 
         <p class="email-info mt-4">
-            Pertanyaan Anda akan segera kami tanggapi dan balas melalui email <strong>budi@gmail.com</strong>.<br><br>
+            Pertanyaan Anda akan segera kami tanggapi dan balas melalui email <strong>{{ session('email') }}</strong>.<br><br>
             Mohon cek kotak masuk atau folder spam Anda secara berkala.
         </p>
 
-        <a href="{{ url('/') }}" class="btn btn-primary mt-4">Kembali ke Beranda</a>
+        <a href="{{ url('/home') }}" class="btn btn-primary mt-4">Kembali ke Beranda</a>
     </div>
 
 </body>

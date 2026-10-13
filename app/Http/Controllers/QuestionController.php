@@ -34,9 +34,6 @@ class QuestionController extends Controller
 		    'pertanyaan' => 'required|max:300|min:8',
 		]);
 
-	
-		return
-
         $data['nama'] = $request->nama;
         $data['email'] = $request->email;
         $data['pertanyaan'] = $request->pertanyaan;
