@@ -169,12 +169,27 @@
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
-                                @foreach ($errors->all() as $error )
-                                    <li>{{$error}}</li>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
                         </div>
                     @endif
+
+                    {{-- BAGIAN YANG DIUBAH: Alert session info + script redirect otomatis --}}
+                    @if (session('info'))
+                        <div class="alert alert-success">
+                            {{ session('info') }}
+                        </div>
+
+                        <script>
+                            setTimeout(function() {
+                                window.location.href = "{{ route('question.response') }}";
+                            }, 2000);
+                        </script>
+                    @endif
+
+
                     <form action="{{ route('question.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
@@ -187,7 +202,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                            <textarea class="form-control" rows="4"  name="pertanyaan"></textarea>
+                            <textarea class="form-control" rows="4" name="pertanyaan"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                     </form>
@@ -278,6 +293,3 @@
 </body>
 
 </html>
-apps-fileview.texmex_20261001.00_p0
-home.blade.php
-Displaying home.blade.php.
