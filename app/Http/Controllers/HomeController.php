@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         /* atau Cara 2 */
         $data = [
-            'username'        => 'Laravel',
+            'username'        => 'Laravel Raffli',
             'last_login'      => date('Y-m-d H:i:s'),
             'list_pendidikan' => ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3'],
         ];

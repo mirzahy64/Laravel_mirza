@@ -1,18 +1,18 @@
 <!--
 
 =========================================================
-- Volt Pro - Premium Bootstrap 5 Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-- Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-- Copyright 2021 Themesberg (https://www.themesberg.com)
-- License (https://themesberg.com/licensing)
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
 
-- Designed and coded by https://themesberg.com
+* Designed and coded by https://themesberg.com
 
 =========================================================
 
-- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
 
 -->
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
     <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <a class="navbar-brand me-lg-5" href="../../index.html">
             <img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" /> <img
-                class="navbar-brand-light" src="{{ asset('assets-admin/img/brand/dark.svg') }}" alt="Volt logo" />
+                class="navbar-brand-light" src="{{ asset('') }}assets-admin/img/brand/dark.svg" alt="Volt logo" />
         </a>
         <div class="d-flex align-items-center">
             <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -102,7 +102,7 @@
                         <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item  active ">
                     <a href="{{ route('dashboard') }}" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -115,8 +115,9 @@
                     </a>
                 </li>
 
-                <li class="nav-item active">
-                    <a href="{{ route('pelanggan.index') }}" class="nav-link">
+                <!-- Tambahkan blok kode ini -->
+                <li class="nav-item  active ">
+                    <a href="" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" data-slot="icon" fill="none" stroke-width="1.5"
                                 stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -344,17 +345,17 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="{{ route('pelanggan.index') }}">Pelanggan</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pelanggan</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Pelanggan</li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
                     <h1 class="h4">Edit Pelanggan</h1>
-                    <p class="mb-0">Form untuk memperbarui data pelanggan.</p>
+                    <p class="mb-0">Form untuk menambahkan data pelanggan baru.</p>
                 </div>
                 <div>
-                    <a href="{{ route('pelanggan.index') }}" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                    <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
                 </div>
             </div>
         </div>
@@ -364,7 +365,6 @@
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
                         <form action="{{ route('pelanggan.update', $dataPelanggan->pelanggan_id) }}" method="POST">
-                            @csrf
                             @method('PUT')
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
@@ -394,8 +394,8 @@
                                     <!-- Gender -->
                                     <div class="mb-3">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <select id="gender" name="gender" class="form-select">
-                                            <option value="">Gender</option>
+                                        <select id="gender" name="gender" class="form-select" name="gender">
+                                            <option selected>Gender</option>
                                             <option value="Female"
                                                 {{ $dataPelanggan->gender == 'Female' ? 'selected' : '' }}>Female
                                             </option>
@@ -409,7 +409,7 @@
                                     <!-- Email -->
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" id="email" class="form-control" required
+                                        <input type="text" id="email" class="form-control" required
                                             name="email" value="{{ $dataPelanggan->email }}">
                                     </div>
 
