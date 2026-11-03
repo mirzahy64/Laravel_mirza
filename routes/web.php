@@ -6,6 +6,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +31,5 @@ Route::put('/cv/profile/{id}', [CvController::class, 'updateProfile'])->name('cv
 Route::put('/cv/{id}', [CvController::class, 'update'])->name('cv.update');
 Route::delete('/cv/{id}', [CvController::class, 'destroy'])->name('cv.destroy');
 Route::get('/cv/show/{id}', [CvController::class, 'show'])->name('cv.show');
+
+Route::resource('user', UserController::class);

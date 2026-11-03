@@ -84,11 +84,9 @@ class CvController extends Controller
         return redirect()->back()->with('success', 'Data berhasil dihapus!');
     }
 
-    // METHOD UNTUK MENAMPILKAN HALAMAN DETIL CV PER ORANG
     public function show($id)
     {
         $userCv = Cv::findOrFail($id);
-        // Mengambil semua riwayat kerja milik nama tersebut
         $riwayatKerja = Cv::where('nama',$userCv->nama)->get();
 
         return view('Cv.show', compact('userCv', 'riwayatKerja'));
